@@ -13,6 +13,6 @@ This folder contains the model based on LSTM's that was trained for predicting t
 Folder contents:
 
 * *./features*: Subfolder with all the code related to the feature extractor
-* "./graphs": Subfolder containing the code for the matplotlib graphs for plotting loss and accuracy data during training
-* "./network": Subfolder with the different LSTM models: the one actually trained for the report, a version of th proposed network for pose estimation, and some variations
-* "./main.py": Script with the training loop
+* *./graphs*: Subfolder containing the code for the matplotlib graphs for plotting loss and accuracy data during training
+* *./network*: Subfolder with the different LSTM models: the one actually trained for the report, a version of th proposed network for pose estimation, and some variations
+* *./main.py*: Script with the training loop
