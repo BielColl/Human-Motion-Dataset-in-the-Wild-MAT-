@@ -28,3 +28,23 @@ Folder contents:
 * *./cameraCalibration.py*: Small library with several functions to obtain the intrinsic parameters of a camera. While a camera can be calibrated using a single image, if several images are used the results improve. As an input, one can use a set of individual pictures or a video. If the input is a video, the script itself will extract a set of frames to execute the calibration.
 * *./cameraParameters.npz*: Example of the saved output of the calibration. It contains the intrinsic matrix and the distortion parameters.
 
+## Projection
+
+This folder contains the MATLAB scripts used for projecting MVN Awinda data onto the video frames. 
+
+Folder main contents:
+
+* *./poseProjectionMultiplePnP.m*: Main interactive app to project MVNX data to a sequence of frames. It starts by manually selecting the joints seen at the frame. To increase the number of points in the EPnP algorithm, several frames of the same sequence can be used. Then, the EPnP algorithm is run and the projections is shown on screen. If the results can be improved, the app lets the user redefine the manually selected points or manually tweak the camera pose while visualizing the changes in the projection. 
+
+* *./iterativePnP.m*: Script that applies an EPnP algorithm to obtain the camera pose in the sequence. Because of the noise that could be introduced in the manually selected points by the user, this script applies several changes to the initial points. Minor translations are applied to each point at every iteration and, then, the EPnP algorithm is applied. Then, the points are reprojected using the R and T obtained and are compared with the points selected by the user, computing a projection error. The script saves the best set of initial points and returns the corresponding R and T matrices.
+
+* *./addNoise2Points.m*: Script that adds noise to the initial points selected by the user, to apply the minor translations mentioned above.
+* *./changeCoordinateSystem.m* Given a point expressed in the coordinate system A, the axis of another coordinate system B in A and the position of B in A, return the point expressed in B.  
+* *./createProjectionsMP4.m*, *./createProjectionsGif.m*: Exports a projected sequence in MP4 or GIF, respectively.
+* *./knownProjection.m*: Given a set of intrinsic and extrinsic parameters, shows on screen the resulting projected sequence. 
+* *./undistort.m*: Undistorts a frame using the distortion coefficients of the camera.
+* *./videocamera_calibration.mat*: Contains the intrinsic parameters of the camera used
+
+
+
+
