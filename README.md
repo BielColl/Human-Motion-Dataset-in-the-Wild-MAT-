@@ -1,7 +1,6 @@
 # Human Motion Dataset in the Wild (MAT)
 Repository for the code used in the project Human Motion Dataset in the Wild (MAT). 
 
----
 ## Contents
 * LSTM Model
 * 2
@@ -10,3 +9,10 @@ This folder contains the model based on LSTM's that was trained for predicting t
 
 * Original repository: https://github.com/ZheC/Realtime_Multi-Person_Pose_Estimation
 * Pytorch implementation repository: https://github.com/tensorboy/pytorch_Realtime_Multi-Person_Pose_Estimation
+
+Folder contents:
+
+* "./features": Subfolder with all the code related to the feature extractor
+* "./graphs": Subfolder containing the code for the matplotlib graphs for plotting loss and accuracy data during training
+* "./network": Subfolder with the different LSTM models: the one actually trained for the report, a version of th proposed network for pose estimation, and some variations
+* "./main.py": Script with the training loop
